@@ -16,11 +16,7 @@ namespace TestAnagrams
         public void AreAnagramas()
         {
 
-            CheckAnagrams anagrams = new CheckAnagrams();
-
-            int setsOfAnagrams = 20683;
-
-            IEnumerable<string> anagrams = anagrams.Get() 
+            CheckAnagrams anagrams = new CheckAnagrams();          
 
             Assert.That(() => anagrams.AreAnagrams("Juan", "nuja"), Is.True);
 
