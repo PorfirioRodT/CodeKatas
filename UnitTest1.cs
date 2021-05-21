@@ -14,18 +14,18 @@ namespace TestAnagrams
         {
         }
 
-        [Test]
+        /*[Test]
         public void AreAnagramas()
         {
 
             CheckAnagrams anagrams = new CheckAnagrams();     
 
-            /*ArrayList anagramsTest = new ArrayList(); 
+            //ArrayList anagramsTest = new ArrayList(); 
 
-            anagramsTest.Add("hola");
-            anagramsTest.Add("loha");  
-            anagramsTest.Add("loah");  
-            anagramsTest.Add("hoal");    */  
+            //anagramsTest.Add("hola");
+            //anagramsTest.Add("loha");  
+            //anagramsTest.Add("loah");  
+            //anagramsTest.Add("hoal");     
 
             Assert.That(() => anagrams.AreAnagrams("Juan", "nuja"), Is.True);
 
@@ -37,7 +37,7 @@ namespace TestAnagrams
 
             CheckAnagrams anagrams = new CheckAnagrams();
 
-            Assert.That(() => anagrams.AreAnagrams("Juan", "pedro"), Is.False /* Throws.Nothing*/);
+            Assert.That(() => anagrams.AreAnagrams("Juan", "pedro"), Is.False /* Throws.Nothing);
 
         }
 
@@ -48,6 +48,17 @@ namespace TestAnagrams
             CheckAnagrams anagrams = new CheckAnagrams();
 
             Assert.That(() => anagrams.AreAnagrams(null), Throws.ArgumentNullException);
+
+        }*/
+
+        [Test]
+        public void TheListOfWordsIsEmpty()
+        {
+
+            string[] expectedWords = new string[] { };
+            FileReader fileReader = new FileReader();
+            string[] arrayFromFile = fileReader.GettingArray();
+            Assert.AreEqual(arrayFromFile, expectedWords);     
 
         }
 

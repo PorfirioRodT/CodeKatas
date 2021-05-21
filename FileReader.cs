@@ -7,7 +7,7 @@ namespace TestAnagrams
     public class FileReader
     {
 
-        public GetFile(string path){
+        public FileReader(string path){
 
             if (!File.Exists(path))
             {
@@ -35,12 +35,12 @@ namespace TestAnagrams
 
         private string[] ConvertingToArray = null;
 
-        public GetFile(){
+        public FileReader(){
 
             ConvertingToArray = new string[]{ };
 
         }
-        public string[] GetArray(){
+        public string[] GettingArray(){
 
             return this.ConvertingToArray;
 
