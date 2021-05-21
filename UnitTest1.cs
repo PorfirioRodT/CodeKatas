@@ -1,3 +1,5 @@
+using System.Collections;
+using System;
 using NUnit.Framework;
 using System.Linq;
 using System.Collections.Generic;
@@ -16,7 +18,14 @@ namespace TestAnagrams
         public void AreAnagramas()
         {
 
-            CheckAnagrams anagrams = new CheckAnagrams();          
+            CheckAnagrams anagrams = new CheckAnagrams();     
+
+            /*ArrayList anagramsTest = new ArrayList(); 
+
+            anagramsTest.Add("hola");
+            anagramsTest.Add("loha");  
+            anagramsTest.Add("loah");  
+            anagramsTest.Add("hoal");    */  
 
             Assert.That(() => anagrams.AreAnagrams("Juan", "nuja"), Is.True);
 
