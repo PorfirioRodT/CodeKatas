@@ -39,26 +39,32 @@ namespace TestAnagrams
 
             Assert.That(() => anagrams.AreAnagrams("Juan", "pedro"), Is.False /* Throws.Nothing);
 
-        }
-
-        [Test]
-        public void TheListOfWordsIsEmpy()
-        {
-
-            CheckAnagrams anagrams = new CheckAnagrams();
-
-            Assert.That(() => anagrams.AreAnagrams(null), Throws.ArgumentNullException);
-
         }*/
 
         [Test]
         public void TheListOfWordsIsEmpty()
         {
 
-            string[] expectedWords = new string[] { };
             FileReader fileReader = new FileReader();
+            
+            string[] expectedWords = new string[] { };        
             string[] arrayFromFile = fileReader.GettingArray();
+
             Assert.AreEqual(arrayFromFile, expectedWords);     
+
+        }
+
+        [Test]
+        public void TheFileReturnsTheArrays()
+        {
+
+            FileReader fileReader = new FileReader("C:/Users/el-co/OneDrive/Escritorio/Tendencia/pruebas.txt");
+            
+            string[] expectedWords = new string[] { "maria", "cret", "pasame", "jugo", "pedro", "juan", "pedro", 
+                                                    "michael", "nuaj", "corazon", "drope", "arima" };        
+            string[] arrayFromFile = fileReader.GettingArray();
+
+            Assert.AreEqual(arrayFromFile, expectedWords);  
 
         }
 
