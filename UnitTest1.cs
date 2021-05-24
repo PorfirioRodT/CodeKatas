@@ -68,5 +68,17 @@ namespace TestAnagrams
 
         }
 
+        [Test]
+        public void HashIsWOrking(){
+
+            HashValues hash = new HashValues();
+
+            Dictionary<string, List<string>> isDictionary = new Dictionary<string, List<string>>();
+
+            //Assert.That(()=> hash.hashAnagrams, Is.True);
+            Assert.AreEqual(hash.hashAnagrams, isDictionary);
+
+        } 
+
     }
 }
