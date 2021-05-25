@@ -1,3 +1,4 @@
+using System.IO;
 using System.Collections;
 using System;
 using NUnit.Framework;
@@ -79,9 +80,40 @@ namespace TestAnagrams
             Assert.AreEqual(hash.hashAnagrams, isDictionary);
             Assert.AreEqual(hash.hashWords, isDictionary);
 
-        }   
+        }
 
-        
+        [Test]
+        public void HashIsSortingTheData(){
+
+            string[] testingMethod = new string[] {"dog", "gdo", "god"};
+            
+            HashValues hash = new HashValues(testingMethod);
+             
+            Dictionary<string, List<string>> isDictionary = new Dictionary<string, List<string>>(){
+                ["dgo"] = new List<string>() { "dog", "gdo", "god" }};
+
+            //Assert.Pass();
+            Assert.AreEqual(hash.hashWords, isDictionary);
+
+        }
+
+        [Test]
+        public void MethodFromAnagramsWorkingWell(){
+
+            string[] words = new string[] { "DOg", "gDo", "gOd" };
+            string[] setOfAnagrams = new string[] { "dog, gdo, god" };
+            
+            HashValues hash = new HashValues(words);
+            CheckAnagrams checkAnagrams = new CheckAnagrams(hash);
+
+            TextWriter textWriter = new StringWriter();
+            Console.SetOut(textWriter);
+            checkAnagrams.PrintingAnagramsValues(textWriter);
+            string printingValues = textWriter.ToString();
+           
+            Assert.AreEqual(string.Join(Environment.NewLine, setOfAnagrams) + "\r\n", printingValues);
+
+        } 
 
     }
 }
