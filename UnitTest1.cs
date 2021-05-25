@@ -77,8 +77,11 @@ namespace TestAnagrams
 
             //Assert.That(()=> hash.hashAnagrams, Is.True);
             Assert.AreEqual(hash.hashAnagrams, isDictionary);
+            Assert.AreEqual(hash.hashWords, isDictionary);
 
-        } 
+        }   
+
+        
 
     }
 }
